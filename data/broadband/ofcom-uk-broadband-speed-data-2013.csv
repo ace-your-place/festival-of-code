@@ -1,0 +1,201 @@
+AREA,,Score
+Abertawe - Swansea,7,3.5
+Ards,8,4
+Ballymena,10,5
+Ballymoney,10,5
+Banbridge,9,4.5
+Bath and North East Somerset,8,4
+Bedford ,8,4
+Belfast,6,3
+Birmingham District ,6,3
+Blackpool ,8,4
+Bolton District ,6,3
+Bournemouth ,5,2.5
+Bracknell Forest ,6,3
+Bradford District ,7,3.5
+Bro Morgannwg - the Vale of Glamorgan,7,3.5
+Buckinghamshire County,6,3
+Bury District ,6,3
+Caerdydd - Cardiff,6,3
+Cambridgeshire County,8,4
+Carrickfergus,7,3.5
+Casnewydd - Newport,7,3.5
+Castell-nedd Port Talbot - Neath Port Talbot,10,5
+Castlereagh,6,3
+Central Bedfordshire,6,3
+City of Bristol ,5,2.5
+City of Derby ,6,3
+City of Edinburgh,6,3
+City of Leicester ,6,3
+City of Nottingham ,7,3.5
+City of Peterborough ,8,4
+City of Plymouth ,6,3
+City of Portsmouth ,6,3
+City of Southampton ,6,3
+City of Stoke-on-Trent ,8,4
+City of Wolverhampton District ,6,3
+Coleraine,9,4.5
+Cookstown,11,5.5
+Coventry District ,7,3.5
+Craigavon,8,4
+Darlington ,8,4
+Derry,8,4
+Down,9,4.5
+Dudley District ,7,3.5
+Dundee City,7,3.5
+Dungannon,10,5
+East Dunbartonshire,6,3
+East Renfrewshire,6,3
+Essex County,8,4
+Falkirk,7,3.5
+Fermanagh,10,5
+Gateshead District ,8,4
+Glasgow City,9,4.5
+Halton ,8,4
+Hampshire County,6,3
+Hartlepool ,8,4
+Hertfordshire County,5,2.5
+Inverclyde,8,4
+Kirklees District ,8,4
+Knowsley District ,8,4
+Leeds District ,7,3.5
+Leicestershire County,7,3.5
+Limavady,10,5
+Lisburn,8,4
+Liverpool District ,8,4
+London,6,3
+Luton ,6,3
+Magherafelt,9,4.5
+Manchester District ,8,4
+Medway ,6,3
+Middlesbrough ,7,3.5
+Moyle,11,5.5
+Newcastle upon Tyne District ,8,4
+Newry and Mourne,9,4.5
+Newtownabbey,6,3
+North Down,7,3.5
+North East Lincolnshire ,6,3
+North Lanarkshire,8,4
+North Tyneside District ,7,3.5
+Northamptonshire County,7,3.5
+Nottinghamshire County,7,3.5
+Oldham District ,8,4
+Oxfordshire County,7,3.5
+Poole ,7,3.5
+Reading ,6,3
+Redcar and Cleveland ,6,3
+Renfrewshire,7,3.5
+Rochdale District ,8,4
+Salford District ,7,3.5
+Sandwell District ,8,4
+Sefton District ,7,3.5
+Slough ,7,3.5
+Solihull District ,6,3
+South Gloucestershire,6,3
+South Lanarkshire,9,4.5
+South Tyneside District ,7,3.5
+Southend-on-Sea ,5,2.5
+St. Helens District ,7,3.5
+Stockport District ,5,2.5
+Stockton-on-Tees ,6,3
+Strabane,10,5
+Sunderland District ,8,4
+Surrey County,6,3
+Swindon ,7,3.5
+Tameside District ,6,3
+Telford and Wrekin ,7,3.5
+The City of Brighton and Hove ,4,2
+Thurrock ,6,3
+Trafford District ,6,3
+Walsall District ,7,3.5
+Warrington ,8,4
+Warwickshire County,8,4
+West Berkshire,8,4
+West Dunbartonshire,7,3.5
+West Lothian,8,4
+West Sussex County,7,3.5
+Wigan District ,6,3
+Windsor and Maidenhead ,7,3.5
+Wirral District ,7,3.5
+Wokingham ,6,3
+Aberdeen City,8,4
+Angus,10,5
+Antrim,9,4.5
+Armagh,11,5.5
+Barnsley District ,10,5
+Blackburn with Darwen ,9,4.5
+Caerffili - Caerphilly,12,6
+Calderdale District ,11,5.5
+Cheshire East ,9,4.5
+Cheshire West and Chester ,10,5
+City of Kingston upon Hull ,13,6.5
+Clackmannanshire,11,5.5
+Cornwall,10,5
+County Durham,11,5.5
+Derbyshire County,10,5
+Devon County,11,5.5
+Doncaster District ,10,5
+Dorset County,11,5.5
+East Lothian,11,5.5
+East Riding of Yorkshire,12,6
+East Sussex County,10,5
+Fife,9,4.5
+Gloucestershire County,10,5
+Isle of Wight,10,5
+Kent County,10,5
+Lancashire County,10,5
+Larne,11,5.5
+Lincolnshire County,11,5.5
+Milton Keynes ,9,4.5
+Norfolk County,11,5.5
+North Lincolnshire ,11,5.5
+North Somerset,8,4
+North Yorkshire County,11,5.5
+Northumberland,11,5.5
+Omagh,11,5.5
+Pen-y-bont ar Ogwr - Bridgend,10,5
+Perth and Kinross,11,5.5
+Rhondda Cynon Taf - Rhondda Cynon Taff,12,6
+Rotherham District ,9,4.5
+Scottish Borders,12,6
+Sheffield District ,10,5
+Shropshire,11,5.5
+Sir Fynwy - Monmouthshire,11,5.5
+Sir y Fflint - Flintshire,10,5
+Somerset County,11,5.5
+Staffordshire County,9,4.5
+Stirling,10,5
+Suffolk County,10,5
+Torbay ,8,4
+Tor-faen - Torfaen,10,5
+Wakefield District ,10,5
+Wiltshire,9,4.5
+Worcestershire County,9,4.5
+Wrecsam - Wrexham,10,5
+York ,8,4
+Aberdeenshire,13,6.5
+Blaenau Gwent - Blaenau Gwent,14,7
+Conwy - Conwy,14,7
+County of Herefordshire,13,6.5
+Cumbria County,15,7.5
+Dumfries and Galloway,14,7
+East Ayrshire,14,7
+Gwynedd - Gwynedd,15,7.5
+Midlothian,14,7
+Moray,13,6.5
+North Ayrshire,14,7
+Rutland,14,7
+Sir Ddinbych - Denbighshire,13,6.5
+Sir Ynys Mon - Isle of Anglesey,15,7.5
+South Ayrshire,14,7
+Argyll and Bute,15,7.5
+Highland,14,7
+Merthyr Tudful - Merthyr Tydfil,16,8
+Orkney Islands,16,8
+Powys - Powys,16,8
+Shetland Islands,14,7
+Sir Benfro - Pembrokeshire,16,8
+Sir Ceredigion - Ceredigion,17,8.5
+Sir Gaerfyrddin - Carmarthenshire,16,8
+Isles of Scilly,18,9
+Na H-Eileanan an Iar,19,9.5

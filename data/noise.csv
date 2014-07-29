@@ -1,0 +1,134 @@
+Location/Agglomeration,day,night
+Greater London Urban Area,8.894,9.916
+High Wycombe Urban Area,9.976,7.157
+Greater Manchester Urban Area,8.964,6.7010000000000005
+Hastings/Bexhill,7.228,6.662999999999999
+Wigan Urban Area,7.949,6.265
+Southampton Urban Area,8.816,5.724
+Bristol Urban Area,6.627000000000001,5.68
+Burnley/Nelson,6.72,5.287999999999999
+Brighton/Worthing/Littlehampton,5.452000000000001,5.112
+Portsmouth Urban Area,6.997000000000001,5.069
+Slough Urban Area,8.809,4.97
+Liverpool Urban Area,6.082999999999999,4.831
+West Yorkshire Urban Area,6.756,4.796
+Torbay,4.482,4.776
+Ipswich Urban Area,5.148,4.615
+Blackburn/Darwen,6.44,4.603
+Bedford/Kempston,4.971,4.598
+West Midlands Urban Area,7.382000000000001,4.453
+Nottingham Urban Area,5.497999999999999,4.38
+Sheffield Urban Area,5.688,4.313
+Reading/Wokingham,7.4639999999999995,4.297
+Oxford,6.474,4.2139999999999995
+Doncaster Urban Area,5.978,4.042
+Aldershot Urban Area,8.074,4.033
+Preston Urban Area,7.065,3.924
+Northampton Urban Area,6.27,3.9219999999999997
+The Medway Towns Urban Area,5.148,3.905
+The Potteries,5.784,3.7739999999999996
+Crawley Urban Area,7.662000000000001,3.737
+St Albans/Hatfield,6.425,3.714
+Cheltenham/Charlton Kings,5.75,3.7039999999999997
+Southend Urban Area,4.172,3.5869999999999997
+Eastbourne,4.993,3.5810000000000004
+Warrington Urban Area,9.208,3.55
+Bournemouth Urban Area,4.598,3.4560000000000004
+Derby Urban Area,4.481,3.341
+Tyneside,5.132999999999999,3.332
+Cambridge Urban Area,6.12,3.33
+Dearne Valley Urban Area,4.806,3.178
+Colchester,4.842,3.0869999999999997
+Thanet,3.8510000000000004,3.0669999999999997
+York,3.635,3.029
+Norwich Urban Area,5.149,2.9789999999999996
+Birkenhead Urban Area,5.996,2.84
+Leicester Urban Area,4.975,2.84
+Lincoln Urban Area,3.2039999999999997,2.57
+Grimsby/Cleethorpes,4.143,2.536
+Exeter,3.375,2.4530000000000003
+Sunderland Urban Area,3.5439999999999996,2.4459999999999997
+Chesterfield/Staveley,3.48,2.434
+Luton/Dunstable,3.958,2.227
+Swindon,3.2689999999999997,1.979
+Mansfield Urban Area,3.1639999999999997,1.893
+Gloucester Urban Area,4.28,1.861
+Plymouth,2.766,1.8019999999999998
+Blackpool Urban Area,3.725,1.7480000000000002
+Coventry/Bedworth,4.325,1.663
+Kingston upon Hull,2.245,1.649
+Southport/Formby,4.9430000000000005,1.111
+Peterborough,4.12,1.077
+Basildon/North Benfleet,3.3139999999999996,0.8109999999999999
+Teesside,2.86,0.7
+Nuneaton Urban Area,1.785,0.546
+Telford Urban Area,2.403,0.507
+Milton Keynes Urban Area,1.9140000000000001,0.355
+Major sources (outside agglomerations),,
+Location/Agglomeration,day,night
+Greater London Urban Area,8.894,9.916
+High Wycombe Urban Area,9.976,7.157
+Greater Manchester Urban Area,8.964,6.7010000000000005
+Hastings/Bexhill,7.228,6.662999999999999
+Wigan Urban Area,7.949,6.265
+Southampton Urban Area,8.816,5.724
+Bristol Urban Area,6.627000000000001,5.68
+Burnley/Nelson,6.72,5.287999999999999
+Brighton/Worthing/Littlehampton,5.452000000000001,5.112
+Portsmouth Urban Area,6.997000000000001,5.069
+Slough Urban Area,8.809,4.97
+Liverpool Urban Area,6.082999999999999,4.831
+West Yorkshire Urban Area,6.756,4.796
+Torbay,4.482,4.776
+Ipswich Urban Area,5.148,4.615
+Blackburn/Darwen,6.44,4.603
+Bedford/Kempston,4.971,4.598
+West Midlands Urban Area,7.382000000000001,4.453
+Nottingham Urban Area,5.497999999999999,4.38
+Sheffield Urban Area,5.688,4.313
+Reading/Wokingham,7.4639999999999995,4.297
+Oxford,6.474,4.2139999999999995
+Doncaster Urban Area,5.978,4.042
+Aldershot Urban Area,8.074,4.033
+Preston Urban Area,7.065,3.924
+Northampton Urban Area,6.27,3.9219999999999997
+The Medway Towns Urban Area,5.148,3.905
+The Potteries,5.784,3.7739999999999996
+Crawley Urban Area,7.662000000000001,3.737
+St Albans/Hatfield,6.425,3.714
+Cheltenham/Charlton Kings,5.75,3.7039999999999997
+Southend Urban Area,4.172,3.5869999999999997
+Eastbourne,4.993,3.5810000000000004
+Warrington Urban Area,9.208,3.55
+Bournemouth Urban Area,4.598,3.4560000000000004
+Derby Urban Area,4.481,3.341
+Tyneside,5.132999999999999,3.332
+Cambridge Urban Area,6.12,3.33
+Dearne Valley Urban Area,4.806,3.178
+Colchester,4.842,3.0869999999999997
+Thanet,3.8510000000000004,3.0669999999999997
+York,3.635,3.029
+Norwich Urban Area,5.149,2.9789999999999996
+Birkenhead Urban Area,5.996,2.84
+Leicester Urban Area,4.975,2.84
+Lincoln Urban Area,3.2039999999999997,2.57
+Grimsby/Cleethorpes,4.143,2.536
+Exeter,3.375,2.4530000000000003
+Sunderland Urban Area,3.5439999999999996,2.4459999999999997
+Chesterfield/Staveley,3.48,2.434
+Luton/Dunstable,3.958,2.227
+Swindon,3.2689999999999997,1.979
+Mansfield Urban Area,3.1639999999999997,1.893
+Gloucester Urban Area,4.28,1.861
+Plymouth,2.766,1.8019999999999998
+Blackpool Urban Area,3.725,1.7480000000000002
+Coventry/Bedworth,4.325,1.663
+Kingston upon Hull,2.245,1.649
+Southport/Formby,4.9430000000000005,1.111
+Peterborough,4.12,1.077
+Basildon/North Benfleet,3.3139999999999996,0.8109999999999999
+Teesside,2.86,0.7
+Nuneaton Urban Area,1.785,0.546
+Telford Urban Area,2.403,0.507
+Milton Keynes Urban Area,1.9140000000000001,0.355
+Major sources (outside agglomerations),,
