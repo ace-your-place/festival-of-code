@@ -14,7 +14,7 @@ for row in cr:
 
 Crime_Data.append("test")
 
-print Crime_Data
+print(Crime_Data)
 	
 
 
