@@ -6,7 +6,7 @@ ofile  = open('data/railways.csv', "wb")
 writer = csv.writer(ofile, delimiter='\t', quotechar='"', quoting=csv.QUOTE_ALL)
 lines = 0
 
-with open('data/railways.csv', 'rb') as f:
+with open('data/railways/RailReferences.csv', 'rb') as f:
     reader = csv.reader(f)
     for row in reader:
         lines += 1
@@ -15,3 +15,5 @@ with open('data/railways.csv', 'rb') as f:
             data = cv.ENtoLL84(row[0], row[1])
         #print data
             writer.writerow(data)
+
+
