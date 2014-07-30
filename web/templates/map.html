@@ -14,28 +14,19 @@
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script>
-var map;
-var latitude = 0; // THIS NEVER CHANGES
-var longitude = 0; // NEITHER DOES THIS ONE
-function initialize() {
-  $.ajax({
-    url : "http://maps.googleapis.com/maps/api/geocode/json?address=santa+cruz&components=postal_code:"+"{{location}}"+"&sensor=false",
-    method: "POST",
-    success:function(data){
-      latitude = data.results[0].geometry.location.lat;
-      longitude = data.results[0].geometry.location.lng;
-      console.log(latitude,longitude); // WORKS
-    }
-  });
-  console.log("From initialise function: ", latitude,longitude);
-  var mapOptions = {
-    zoom: 8,
-    center: new google.maps.LatLng(latitude,longitude)
-  };
-  map = new google.maps.Map(document.getElementById('map'), mapOptions);
+var Latlng = new google.maps.LatLng("{{latitude}}", "{{longitude}}");
+var lat_long = [LatLng[0],LatLng[1]]
+var mapOptions = {
+  zoom: 4,
+  center: lat_long
 }
+var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-google.maps.event.addDomListener(window, 'load', initialize); // when does this get called
+var marker = new google.maps.Marker({
+    position: lat_long,
+    map: map,
+    title:"Hello World!"
+});
     </script>
   </head>
   <body>
@@ -43,8 +34,8 @@ google.maps.event.addDomListener(window, 'load', initialize); // when does this 
     <div id="lat"></div>
     <div id="long"></div>
     <script type="text/javascript">
-    document.getElementById('lat').innerHTML = "Latitude: " + latitude;
-    document.getElementById('long').innerHTML = "Longitude: " + longitude;
+    document.getElementById('lat').innerHTML = "Latitude: " + lat_long[0];
+    document.getElementById('long').innerHTML = "Longitude: " + lng;
     </script>
   </body>
 </html>
