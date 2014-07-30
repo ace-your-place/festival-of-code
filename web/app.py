@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 app = Flask(__name__)
 
 @app.route('/')
@@ -9,9 +9,11 @@ def index():
 def cakes():
 	return 'cakes are awesome'
 
-@app.route('/<location_input')
+@app.route('/map', methods=['GET'])
 def map():
-	return render_template('map.html', location=location_input)
+	lat = request.args.get('latitude')
+	lng = request.args.get('longitude')
+	return render_template('map.html', latitude = lat, longitude = lng)
 
 if __name__ == '__main__':
 	app.run(debug=True)
