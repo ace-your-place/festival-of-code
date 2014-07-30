@@ -1,4 +1,7 @@
-import sys 
+import sys
 
-for arg in sys.argv:
-	print(arg)
+crime = sys.argv[1]
+railways = sys.argv[2]
+
+
+
