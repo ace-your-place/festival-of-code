@@ -15,6 +15,10 @@ with open('data/crime_data.csv', 'rb') as f:
                 lsoas[row[0]] += 1
             else:
                 lsoas[row[0]] = 1
-    print lsoas
+#IT WORKS
 
+for k, v in lsoas.iteritems():
+    #print "%s,%s" % (k, v)
+    data = (k,v)
+    writer.writerow(data)
 
