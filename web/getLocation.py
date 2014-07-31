@@ -4,7 +4,7 @@ latlong = [[52.4863520771, 1.7524139512], [52.4626442228, 1.7136396631], [52.750
 
 
 def getLocation(crime, education):
-    randomCase = random.randint(0,9)
+    randomCase = random.randint(0,8)
 
     return latlong[randomCase]
 
