@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AceYourPlace "{{location}}"</title>
+    <title>AceYourPlace "{{locations}}"</title>
      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
@@ -15,9 +15,15 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script>
 function initialise(){
-  console.log("location from url: ", "{{location}}")
-  var locations = "{{location}}".split("!");
-  console.log("locations split by !: ", locations);
+  console.log("{{locations}}");
+  var locations = [];
+  {% for location in locations -%}
+    locations.push([{{location[0]}}, {{location[1]}}]);
+  {%- endfor %}
+
+  console.log(locations);
+  
+  //console.log("location from url: ", locations)
   var mapOptions = {
     zoom: 6,
     center: new google.maps.LatLng(51.508742,-0.120850)
@@ -26,15 +32,14 @@ function initialise(){
   var map = new google.maps.Map(document.getElementById("map"), mapOptions);
   
   for (var i = 0; i < locations.length; i++){ // for lat/long in locations passed with url...
-    var lat = locations[i].split(",")[0]
-    var lng = locations[i].split(",")[1]
-    lat_long = [lat,lng];
-    console.log("location ", i, "split by comma: ", lat_long);
-    var theLatLng = new google.maps.LatLng(lat_long[0],lat_long[1]);
+    console.log(locations[i][0]);
+    console.log(locations[i][1]);
+    var LatLng = new google.maps.LatLng(locations[i][0], locations[i][1]);
     var marker = new google.maps.Marker({
-      position: theLatLng,
+      position: LatLng,
       map: map,
       });
+    marker.setMap(map);
     var infowindow = new google.maps.InfoWindow({
       content: "You should<br>live here!"
       });
