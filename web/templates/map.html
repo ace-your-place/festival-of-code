@@ -26,7 +26,9 @@ function initialise(){
   var map = new google.maps.Map(document.getElementById("map"), mapOptions);
   
   for (var i = 0; i < locations.length; i++){ // for lat/long in locations passed with url...
-    lat_long = [locations[i].split(",")[0],locations[i].split(",")[1]];
+    var lat = locations[i].split(",")[0]
+    var lng = locations[i].split(",")[1]
+    lat_long = [lat,lng];
     console.log("location ", i, "split by comma: ", lat_long);
     var theLatLng = new google.maps.LatLng(lat_long[0],lat_long[1]);
     var marker = new google.maps.Marker({
