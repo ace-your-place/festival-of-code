@@ -9,8 +9,8 @@ latlongs = [
 
 
 
-#def getLocation(crime = 0, education = 0):
-
+def getLocation(crime = 0, education = 0):
+	return ''
 
 def getLocationRand(crime = 0, education = 0):
     random_latlong_1 = choice(latlongs)
