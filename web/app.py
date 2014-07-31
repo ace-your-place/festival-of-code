@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from getLocation import getLocation
+from getLocation import getLocation, getLocationRand
 
 app = Flask(__name__)
 
