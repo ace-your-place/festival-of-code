@@ -13,7 +13,7 @@
     <link rel="apple-touch-icon" href="static\ico.ico">
 
 
-    <title>Ace your place</title>
+    <title>AceYourPlace</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -30,6 +30,45 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+      html, body, #map {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script type="text/javascript">
+      function initialise(){
+  var l = "{{location}}";
+  console.log("location from url: ", l)
+  var locations;
+  locations = l.split("!");
+  console.log("locations split by !: ", locations);
+  var mapOptions = {
+    zoom: 6,
+    center: new google.maps.LatLng(51.508742,-0.120850)
+  };
+
+  var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+  
+  for (var i = 0; i < locations.length; i++){ // for lat/long in locations passed with url...
+    lat_long = [locations[i].split(",")[0],locations[i].split(",")[1]];
+    console.log("location ", i, "split by comma: ", lat_long);
+    var theLatLng = new google.maps.LatLng(lat_long[0],lat_long[1]);
+    var marker = new google.maps.Marker({
+      position: theLatLng,
+      map: map,
+      });
+    var infowindow = new google.maps.InfoWindow({
+      content: "You should<br>live here!"
+      });
+    infowindow.open(map,marker);
+  }
+}
+
+google.maps.event.addDomListener(window, 'load', initialise);
+    </script>
 
 </head>
 
@@ -75,13 +114,13 @@
 
         <!-- Heading Row -->
         <div class="row">
-            <div class="col-md-8">
-              <img class="img-responsive img-rounded" src="http://www.barrowcadbury.org.uk/map.png" alt="">
+          <div id="map"></div>
+              <!--<img class="img-responsive img-rounded" src="http://www.barrowcadbury.org.uk/map.png" alt="">-->
             </div>
             <!-- /.col-md-8 -->
             <div class="col-md-4">
-                <h1><strong>Ace your place<strong></h1>
-                <p>Ace your place is designed to help you find the best place in the UK for you to live.</p>
+                <h1><strong>AceYourPlace<strong></h1>
+                <p>AceYourPlace is designed to help you find the best place in the UK for you to live.</p>
                
             </div>
             <!-- /.col-md-4 -->
@@ -227,7 +266,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Ace-your-place 2014........................................................................................................................................ NOT this is totaly open source! :)</p>
+                    <p>Copyright &copy; AceYourPlace 2014........................................................................................................................................ NOT this is totaly open source! :)</p>
                 </div>
             </div>
         </footer>
