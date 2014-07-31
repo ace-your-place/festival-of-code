@@ -1,20 +1,21 @@
 from flask import Flask, render_template, request
 app = Flask(__name__)
-loc = []
+
 @app.route('/')
 def index():
 	return render_template('index.html')
 
-@app.route('/cakes')
-def cakes():
-	return 'cakes are awesome'
+@app.route('/form', methods=['POST'])
+def form():
+	crime_data = request.form.crime
+	education_data = request.form.education
+	lat_long = process.getLocation(crime=crime_data,education=education_data)
+	return render_template('map', latitude = lat_long[0], longitude = lat_long[1])
 
 @app.route('/map', methods=['GET'])
 def map():
-	lat = request.args.get('latitude')
-	lng = request.args.get('longitude')
 	l = request.args.get('location')
-	return render_template('map.html', latitude = lat, longitude = lng, location = l)
+	return render_template('map.html', location = l)
 
 if __name__ == '__main__':
 	app.run(debug=True)

@@ -29,19 +29,6 @@
     <![endif]-->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javascript">
-            function get_form_data() {
-                    var crime = $('#crime').val();
-                    $.ajax({
-                        url: '/query/' + crime,
-                        context: document.body
-                    }).complete(function(data) {
-                        console.log(data);
-                        $('#output').html(data['crime']);
-                    })
-                    
-                }
-    </script>
 
 </head>
 
@@ -117,7 +104,7 @@
         <div class="row">
             <div class="col-md-4">
                 <h2>Tell us what's important to you</h2>
-                 <form class="form-horizontal">
+                 <form class="form-horizontal" action="/form" method="POST">
 <fieldset>
 <!-- Form Name -->
 <legend>Out of one to ten</legend>
