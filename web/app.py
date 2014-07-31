@@ -7,12 +7,15 @@ app = Flask(__name__)
 def index():
 	return render_template('index.html')
 
-@app.route('/form', methods=['GET'])
+@app.route('/form', methods=['POST','GET'])
 def form():
-	crime_data = 0#equest.form.crime
-	education_data = 1#request.form.education
-	lat_long = getLocation(crime=crime_data,education=education_data)
-	return render_template('map.html', latitude = lat_long[0], longitude = lat_long[1])
+	if request.method == 'POST':
+#		print request.form['crime']
+#		print request.form['education']
+#		crime_data = request.form['crime']
+#		education_data = request.form('education')
+		lat_long = getLocation(crime = request.form['crime'], education = request.form['education'])
+		return render_template('map.html', location = lat_long)
 
 @app.route('/map', methods=['GET'])
 def map():

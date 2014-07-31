@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AceYourPlace</title>
+    <title>AceYourPlace "{{location}}"</title>
      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
@@ -15,10 +15,8 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script>
 function initialise(){
-  var l = "{{location}}";
-  console.log("location from url: ", l)
-  var locations;
-  locations = l.split("!");
+  console.log("location from url: ", "{{location}}")
+  var locations = "{{location}}".split("!");
   console.log("locations split by !: ", locations);
   var mapOptions = {
     zoom: 6,
