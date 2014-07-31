@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{location}} info</title>
+    <title>PlaceBook</title>
      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
@@ -16,7 +16,7 @@
     <script>
 
 
-function initialize() {
+/*function initialize() {
   var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
   var mapOptions = {
     zoom: 4,
@@ -31,30 +31,35 @@ function initialize() {
   });
 }
 
-google.maps.event.addDomListener(window, 'load', initialize);
+google.maps.event.addDomListener(window, 'load', initialize); */
 
 
 function initialise(){
   var l = "{{location}}";
-  var l_array;
-  l_array = l.split("!");
-  console.log(l_array);
+  console.log("location from url: ", l)
+  var locations;
+  locations = l.split("!");
+  console.log("locations split by !: ", locations);
   var mapOptions = {
-    zoom: 10,
-    center: new google.maps.LatLng(52.5684920077, 1.7113595535)
+    zoom: 6,
+    center: new google.maps.LatLng(51.508742,-0.120850)
   };
 
   var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-
-  for (var i = 0; i < l_array.length; i++){ // for lat/long in locations passed with url...
-    var LatLng = new google.maps.LatLng(l_array[i]);
+  
+  for (var i = 0; i < locations.length; i++){ // for lat/long in locations passed with url...
+    lat_long = [locations[i].split(",")[0],locations[i].split(",")[1]];
+    console.log("location ", i, "split by comma: ", lat_long);
+    var theLatLng = new google.maps.LatLng(lat_long[0],lat_long[1]);
     var marker = new google.maps.Marker({
-      position: LatLng,
+      position: theLatLng,
       map: map,
-      title:"You should live here!"
       });
+    var infowindow = new google.maps.InfoWindow({
+      content: "You should<br>live here!"
+      });
+    infowindow.open(map,marker);
   }
-  console.log(locations);
 }
 
 google.maps.event.addDomListener(window, 'load', initialise);
