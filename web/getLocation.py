@@ -25,6 +25,7 @@ latlongs = [
 
 
 def getLocation(crime = 0, education = 0):
+	h = 0
 	start = datetime.now()
 	valid_lat_longs = []
 	line = 0
@@ -40,32 +41,35 @@ def getLocation(crime = 0, education = 0):
 				education_row = ((1 + 0.1 * education) * row[3])
 				crime_row = ((1 + 0.1 * education) * row[2])
 				end_val_row = education_row + crime_row
-				end_vals.append([end_val_row, row[0]])
-	sorted_vals = sorted(end_vals, key=lambda tup: tup[0])
-	wanted_vals = [sorted_vals[0],sorted_vals[1],sorted_vals[2],sorted_vals[3],sorted_vals[4]]
-	print len(wanted_vals)
-	amount_of_values_wanted = 0
-	for i in sorted_vals:
-		amount_of_values_wanted =+ 1
-		if amount_of_values_wanted < 5:
-			lsoas.append(i[1])
-			with open('../data/merge.csv', 'rb') as table:
-				reader = csv.reader(table)
-				for row in reader:
-					if str(row[0]) in sorted_vals:
-						print row[1], row[2]
-						valid_lat_longs.append([row[1],row[2]])
+				end_vals.append([row[0], end_val_row])
+		sorted_vals = sorted(end_vals, key=lambda tup: tup[1])
+		wanted_vals = [sorted_vals[0],sorted_vals[1],sorted_vals[2],sorted_vals[3],sorted_vals[4]]
+		print wanted_vals
+		#print sorted_vals
+		print len(wanted_vals)
+		for i in wanted_vals:
+			print i
+			lsoas.append(i[0])
+		#print lsoas
+	with open("../data/lsoas.csv", "rb") as lsoa_reference:
+		reader= csv.reader(lsoa_reference)
+		for row in reader:
+			if row[0] in wanted_vals[h][0]:
+				print "found match", row
+				valid_lat_longs.append([row[1], row[2]])
+				h += 1
+
 	time_taken = datetime.now() - start
 	print time_taken
 	print valid_lat_longs
 	return valid_lat_longs
 
-getLocation(crime=5, education=4)
+getLocation(crime=7, education=7)
 
-"""def getLocationRand(crime = 0, education = 0):
+def getLocationRand(crime = 0, education = 0):
 	random_latlong_1 = choice(latlongs)
 	random_latlong_2 = choice(latlongs)
 	random_latlong_3 = choice(latlongs)
 	random_latlong_4 = choice(latlongs)
 	random_latlong_5 = choice(latlongs)
-	return [random_latlong_1, random_latlong_2, random_latlong_3, random_latlong_4, random_latlong_5]"""
+	return [random_latlong_1, random_latlong_2, random_latlong_3, random_latlong_4, random_latlong_5]
