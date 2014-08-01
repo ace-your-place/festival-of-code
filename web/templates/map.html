@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AceYourPlace "{{locations}}"</title>
+    <title>AceYourPlace</title>
      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
@@ -18,7 +18,7 @@ function initialise(){
   console.log("{{locations}}");
   var locations = [];
   {% for location in locations -%}
-    locations.push([{{location[0]}}, {{location[1]}}]);
+    locations.push([{{location[0]}}, {{location[1]}}, {{location[2]}}, {{location[3]}}, {{location[4]}}]);
   {%- endfor %}
 
   console.log(locations);
@@ -26,12 +26,12 @@ function initialise(){
   //console.log("location from url: ", locations)
   var mapOptions = {
     zoom: 6,
-    center: new google.maps.LatLng(51.508742,-0.120850)
+    center: new google.maps.LatLng(54.301051,-1.860978) // center of UK
   };
 
   var map = new google.maps.Map(document.getElementById("map"), mapOptions);
   
-  for (var i = 0; i < locations.length; i++){ // for lat/long in locations passed with url...
+  for (var i = 0; i < locations.length; i++){ // for lat/long in locations passed...
     console.log(locations[i][0]);
     console.log(locations[i][1]);
     var LatLng = new google.maps.LatLng(locations[i][0], locations[i][1]);
@@ -43,7 +43,7 @@ function initialise(){
     var infowindow = new google.maps.InfoWindow({
       content: "You should<br>live here!"
       });
-    infowindow.open(map,marker);
+//    infowindow.open(map,marker);
   }
 }
 
