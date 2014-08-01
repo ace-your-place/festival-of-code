@@ -1,4 +1,10 @@
 from random import choice
+import csv
+import pandas
+import deque
+
+crimes = deque(max=20)
+schools = deque(max=20)
 
 latlongs = [
 	[52.4863520771, 1.7524139512],
@@ -10,7 +16,8 @@ latlongs = [
 
 
 def getLocation(crime = 0, education = 0):
-	return ''
+	for row in table:
+		
 
 def getLocationRand(crime = 0, education = 0):
     random_latlong_1 = choice(latlongs)
