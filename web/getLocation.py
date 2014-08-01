@@ -6,7 +6,8 @@ from datetime import datetime
 
 crimes = deque(maxlen=20)
 schools = deque(maxlen=20)
-lsoas = deque(maxlen=20)
+#lsoas = deque(maxlen=20)
+lsoas = []
 end_vals = []
 
 latlongs = [
@@ -25,7 +26,6 @@ latlongs = [
 
 
 def getLocation(crime = 0, education = 0):
-	h = 0
 	start = datetime.now()
 	valid_lat_longs = []
 	line = 0
@@ -36,35 +36,35 @@ def getLocation(crime = 0, education = 0):
 		for row in reader:
 			line += 1
 			if line > 1:
-				row[3] = float(row[3])
-				row[2] = float(row[1])
-				education_row = ((1 + 0.1 * education) * row[3])
-				crime_row = ((1 + 0.1 * education) * row[2])
-				end_val_row = education_row + crime_row
-				end_vals.append([row[0], end_val_row])
-		sorted_vals = sorted(end_vals, key=lambda tup: tup[1])
+				lsoa = str(row[0])
+				cpr = float(row[3])
+				sr = float(row[1])
+				education_row = ((1 + 0.1 * education) * sr)
+				print "education", education_row
+				crime_row = ((1 + 0.1 * crime) * cpr)
+				print "crime", crime_row
+				end_val = education_row + crime_row
+				end_vals.append([lsoa, end_val])
+		sorted_vals = sorted(end_vals, key=lambda tup: tup[1], reverse=True)
+		times = 0
 		wanted_vals = [sorted_vals[0],sorted_vals[1],sorted_vals[2],sorted_vals[3],sorted_vals[4]]
-		print wanted_vals
-		#print sorted_vals
-		print len(wanted_vals)
 		for i in wanted_vals:
-			print i
+			print("i: ", i)
 			lsoas.append(i[0])
-		#print lsoas
 	with open("../data/lsoas.csv", "rb") as lsoa_reference:
-		reader= csv.reader(lsoa_reference)
+		reader = csv.reader(lsoa_reference)
 		for row in reader:
-			if row[0] in wanted_vals[h][0]:
-				print "found match", row
+			if row[0] in lsoas:
+				print "got match for: ", row
 				valid_lat_longs.append([row[1], row[2]])
-				h += 1
-
 	time_taken = datetime.now() - start
 	print time_taken
-	print valid_lat_longs
+	print "Valid lat/longs: ", len(valid_lat_longs)
+#	for lat_long in valid_lat_longs:
+#		print lat_long
 	return valid_lat_longs
 
-getLocation(crime=7, education=7)
+print(getLocation(crime = 5, education = 7))
 
 def getLocationRand(crime = 0, education = 0):
 	random_latlong_1 = choice(latlongs)
