@@ -6,8 +6,10 @@ from collections import deque
 crimes = deque(maxlen=20)
 schools = deque(maxlen=20)
 
-lastSaved_crime_high = 0
-lastSaved_school_high = 0
+lsoas = deque(maxlen=20)
+
+crime_high = 0
+education_high = 0
 
 latlongs = [
 	[52.4863520771, 1.7524139512],
@@ -16,23 +18,29 @@ latlongs = [
     [53.3694336227, -2.7122767367]
 ]
 
-line = 0
 
 def getLocation(crime = 0, education = 0):
+	line = 0
 	with open('../data/merge.csv', 'rb') as table:
 		reader = csv.reader(table)
 		for row in reader:
-			if line != 1:
-				if (row[1] >= range(crime - 2, crime, crime + 2)) and (row[3] >= range(education - 2, education, education + 2)):
-					print row[1]
-					print row[3]
-					lastSaved_crime_high = row[1]
-					lastSaved_school_high = row[3]
+			line += 1
+			if line > 1:
+				row[3] = float(row[3])
+				row[2] = float(row[1])
+				best_val_for_crime = crime * row[3]
+				best_val_for_schools = education * row[1]
+				crimes.append(best_val_for_crime)
+				schools.append(best_val_for_schools)
+				for i in crimes:
+					best_overall = crimes[i] + schools[i]
+	print best_overall
 
-	print("Highest school ratings: ", lastSaved_school_high)
-	print("Highest crimes: ", lastSaved_crime_high)
+print lsoas
+print crimes
+print schools
 
-#getLocation(crime=5, education=10)
+getLocation(crime=5, education=4)
 
 def getLocationRand(crime = 0, education = 0):
     random_latlong_1 = choice(latlongs)
