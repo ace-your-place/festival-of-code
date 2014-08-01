@@ -18,7 +18,7 @@ function initialise(){
   console.log("{{locations}}");
   var locations = [];
   {% for location in locations -%}
-    locations.push([{{location[0]}}, {{location[1]}}]);
+    locations.push([{{location[0]}}, {{location[1]}}, {{location[2]}}, {{location[3]}}, {{location[4]}}]);
   {%- endfor %}
 
   console.log(locations);

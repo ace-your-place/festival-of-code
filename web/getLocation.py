@@ -55,4 +55,4 @@ def getLocationRand(crime = 0, education = 0):
 	random_latlong_3 = choice(latlongs)
 	random_latlong_4 = choice(latlongs)
 	random_latlong_5 = choice(latlongs)
-	return [random_latlong_1, random_latlong_2]
+	return [random_latlong_1, random_latlong_2, random_latlong_3, random_latlong_4, random_latlong_5]
