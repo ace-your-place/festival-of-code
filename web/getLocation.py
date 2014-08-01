@@ -8,6 +8,8 @@ schools = deque(maxlen=20)
 lsoas = deque(maxlen=20)
 end_vals = []
 
+lsoa_dict = {}
+
 latlongs = [
 	[52.4863520771, 1.7524139512],
 	[52.4820583105, 1.7403722789],
@@ -42,9 +44,15 @@ def getLocation(crime = 0, education = 0):
 	for i in sorted_vals:
 		if i < 4:
 			lsoas.append(i[1])
-	for i in lsoas:
-		convert lsoa to lat lng
-		lat_long.append(converted_lat_long)
+
+    with open('../data/lsoas.csv', 'rb') as lsoas_table:
+        reader = csv.reader(lsoas_table)
+        for i in reader:
+            lsoas_dict[row[0]] = [row[1], row[2]]
+	    for i in lsoas:
+	       convert lsoa to lat lng
+	       lat_long.append(["LSOA code"])
+
 	return lat_long
 
 getLocation(crime=5, education=4)
