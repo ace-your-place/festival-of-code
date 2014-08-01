@@ -5,11 +5,10 @@ from collections import deque
 
 crimes = deque(maxlen=20)
 schools = deque(maxlen=20)
-
 lsoas = deque(maxlen=20)
+end_vals = []
 
-crime_high = 0
-education_high = 0
+lsoa_dict = {}
 
 latlongs = [
 	[52.4863520771, 1.7524139512],
@@ -28,6 +27,8 @@ latlongs = [
 
 def getLocation(crime = 0, education = 0):
 	line = 0
+	crime = 10 - crime
+	education = 10 - education
 	with open('../data/merge.csv', 'rb') as table:
 		reader = csv.reader(table)
 		for row in reader:
@@ -35,19 +36,26 @@ def getLocation(crime = 0, education = 0):
 			if line > 1:
 				row[3] = float(row[3])
 				row[2] = float(row[1])
-				best_val_for_crime = crime * row[3]
-				best_val_for_schools = education * row[1]
-				crimes.append(best_val_for_crime)
-				schools.append(best_val_for_schools)
-				for i in crimes:
-					best_overall = crimes[i] + schools[i]
-	print best_overall
+				education_row = ((1 + 0.1 * education) * row[3])
+				crime_row = ((1 + 0.1 * education) * row[2])
+				end_val_row = education_row + crime_row
+				end_vals.append([end_val_row, row[0]])
+	sorted_vals = sorted(end_vals, key=lambda tup: tup[0])
+	for i in sorted_vals:
+		if i < 4:
+			lsoas.append(i[1])
 
-print lsoas
-print crimes
-print schools
+    with open('../data/lsoas.csv', 'rb') as lsoas_table:
+        reader = csv.reader(lsoas_table)
+        for i in reader:
+            lsoas_dict[row[0]] = [row[1], row[2]]
+	    for i in lsoas:
+	       convert lsoa to lat lng
+	       lat_long.append(["LSOA code"])
 
-#getLocation(crime=5, education=4)
+	return lat_long
+
+getLocation(crime=5, education=4)
 
 def getLocationRand(crime = 0, education = 0):
 	random_latlong_1 = choice(latlongs)
