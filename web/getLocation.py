@@ -38,15 +38,14 @@ def getLocation(crime = 0, education = 0):
 				crime_row = ((1 + 0.1 * education) * row[2])
 				end_val_row = education_row + crime_row
 				end_vals.append([end_val_row, row[0]])
-#	print("We have %i results" % len(end_vals))
-#	end_vals.sort(key=lamda tup: tup[0])
 	sorted_vals = sorted(end_vals, key=lambda tup: tup[0])
 	for i in sorted_vals:
-		lsoas.append(i[1])
-#	print(sorted_vals)
+		if i < 4:
+			lsoas.append(i[1])
 	for i in lsoas:
-		print i
-#	print("Valid LSOAs: ", lsoas)
+		convert lsoa to lat lng
+		lat_long.append(converted_lat_long)
+	return lat_long
 
 getLocation(crime=5, education=4)
 
