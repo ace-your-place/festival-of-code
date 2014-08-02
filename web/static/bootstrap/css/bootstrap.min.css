@@ -303,7 +303,7 @@
  mark,.mark{padding:.2em;background-color:#fcf8e3}
  .text-left{text-align:left}
  .text-right{text-align:right}
- .text-center{text-align:center}
+ .text-center{text-align:center;margin-left: 300px;margin-right: 300px;}
  .text-justify{text-align:justify}
  .text-nowrap{white-space:nowrap}
  .text-lowercase{text-transform:lowercase}
