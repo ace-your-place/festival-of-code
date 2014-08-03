@@ -10,7 +10,7 @@ def index():
 @app.route('/form', methods=['POST','GET'])
 def form():
 	if request.method == 'POST':
-		lat_longs = getLocation(crime = request.form['crime'], education = request.form['education'])
+		lat_longs = getLocation(crime = request.form['crime'], education = request.form['education'])[0]
 		return render_template('map.html', locations = lat_longs)
 
 @app.route('/map', methods=['GET'])
