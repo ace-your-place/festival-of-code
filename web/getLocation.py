@@ -40,18 +40,21 @@ def getLocation(crime = 0, education = 0):
 				lsoa = str(row[0])
 				cpr = float(row[3])
 				sr = float(row[1])
-				education_row = (((1 + 0.1) * education) * sr)
+				education_row = education * sr #(((1 + 0.1) * education) * sr)
 				#print education_row
-				crime_row = (((1 + 0.1) * crime) * cpr)
+				crime_row = crime * cpr#(((1 + 0.1) * crime) * cpr)
 				#print crime_row
 				end_val = education_row + crime_row
 				end_vals.append([lsoa, end_val])
 		sorted_vals = sorted(end_vals, key=lambda tup: tup[1], reverse=True)
-		wanted_vals = [sorted_vals[0],sorted_vals[1],sorted_vals[2],sorted_vals[3],sorted_vals[4]]
+		#wanted_vals = [sorted_vals[0],sorted_vals[1],sorted_vals[2],sorted_vals[3],sorted_vals[4]]
+		wanted_vals = []
+		h = 0
+		while h < 100:
+			wanted_vals.append(sorted_vals[h])
+			h += 1
 		for i in wanted_vals:
-	#		print("i: ", i)
 			lsoas.append(i[0])
-	#		print lsoas
 	with open("../data/lsoas.csv", "rb") as lsoa_reference:
 		reader = csv.reader(lsoa_reference)
 		for row in reader:
@@ -61,9 +64,10 @@ def getLocation(crime = 0, education = 0):
 	#print "Valid lat/longs: ", len(valid_lat_longs)
 #	print valid_lat_longs
 	#print valid_lat_longs
-	return valid_lat_longs
+	#print len(wanted_vals)
+	return valid_lat_longs, len(wanted_vals)
 
-#print(getLocation(crime = 44, education = 3))
+print(getLocation(crime = 1, education = 4))
 
 def getLocationRand(crime = 0, education = 0):
 	random_latlong_1 = choice(latlongs)
