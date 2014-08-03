@@ -63,11 +63,11 @@ def getLocation(crime = 0, education = 0):
 				valid_lat_longs.append([row[1], row[2]])
 	#print "Valid lat/longs: ", len(valid_lat_longs)
 #	print valid_lat_longs
-	#print valid_lat_longs
+	#print valid_lat_longst
 	#print len(wanted_vals)
 	return valid_lat_longs, len(wanted_vals)
 
-print(getLocation(crime = 1, education = 4))
+#print(getLocation(crime = 1, education = 4))
 
 def getLocationRand(crime = 0, education = 0):
 	random_latlong_1 = choice(latlongs)
