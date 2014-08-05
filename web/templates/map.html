@@ -17,15 +17,13 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script>
 function initialise(){
-  console.log("{{locations}}");
   var locations = [];
+  console.log("{{locations}}")
   {% for location in locations -%}
     locations.push([{{location[0]}}, {{location[1]}}, {{location[2]}}, {{location[3]}}, {{location[4]}}]);
   {%- endfor %}
-
-  console.log(locations);
+  console.log(locations.length)
   
-  //console.log("location from url: ", locations)
   var mapOptions = {
     zoom: 6,
     center: new google.maps.LatLng(54.301051,-1.860978) // center of UK
@@ -34,8 +32,6 @@ function initialise(){
   var map = new google.maps.Map(document.getElementById("map"), mapOptions);
   
   for (var i = 0; i < locations.length; i++){ // for lat/long in locations passed...
-    console.log(locations[i][0]);
-    console.log(locations[i][1]);
     var LatLng = new google.maps.LatLng(locations[i][0], locations[i][1]);
     var marker = new google.maps.Marker({
       position: LatLng,
@@ -43,7 +39,7 @@ function initialise(){
       });
     marker.setMap(map);
     var infowindow = new google.maps.InfoWindow({
-      content: "You should<br>live here!"
+      content: i.toString()
       });
 //    infowindow.open(map,marker);
   }
