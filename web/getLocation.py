@@ -29,9 +29,9 @@ def getLocation(crime = 0, education = 0):
 	valid_lat_longs = []
 	line = 0
 	crime = int(crime)
-	crime = (10 - crime) * 4
-	education = int(education) * 4
-	#education = 10 - education
+	crime = (10 - crime)
+	education = int(education)
+	education = 10 - education
 	with open('../data/merge.csv', 'rb') as table:
 		reader = csv.reader(table)
 		for row in reader:
